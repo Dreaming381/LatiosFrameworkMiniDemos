@@ -6,9 +6,10 @@ features of the Latios Framework.
 ## Feature Samples
 
 This contains a collection of samples exploring specific features across the
-framework. Each scene has its own document explaining the sample.
+framework. These are the samples associated with some of the "Getting Started"
+guides.
 
-The Feature samples use Unity 2022.3.0f1 and Latios Framework 0.7.3.
+The Feature samples use Unity 2022.3.3f1 and Latios Framework 0.8.0.
 
 ## Scene Demo (Old)
 

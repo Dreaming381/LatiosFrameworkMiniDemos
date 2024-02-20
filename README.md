@@ -11,6 +11,15 @@ guides.
 
 The Feature samples use Unity 2022.3.3f1 and Latios Framework 0.8.0.
 
+## Latios/Unity Comparison
+
+These pair of projects provide a comparison setup between vanilla Unity and the
+Latios Framework, demonstrating the Latios Framework’s superior performance of
+transforms and rendering.
+
+The projects use Unity 2022.3.20f1 and Entities 1.1.0-pre.3. The Latios
+Framework version used is 0.9.2.
+
 ## Scene Demo (Old)
 
 This demo introduces the basic setup of a Latios Framework project. It also

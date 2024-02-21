@@ -14,3 +14,14 @@ struct Spinner : IComponentData
     public float rads;
 }
 
+struct MovingTriggerStats : IComponentData
+{
+    public float minSpeed;
+    public float maxSpeed;
+}
+
+struct MovingTriggerState : IComponentData
+{
+    public float2 currentVelocity;
+}
+

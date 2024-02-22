@@ -20,6 +20,15 @@ transforms and rendering.
 The projects use Unity 2022.3.20f1 and Entities 1.1.0-pre.3. The Latios
 Framework version used is 0.9.2.
 
+**Third-Party Notice:**
+
+**All Assets within a directory named Unity_Companion_License_Assets come from
+one of the following repositories:**
+
+-   [**https://github.com/Unity-Technologies/EntityComponentSystemSamples**](https://github.com/Unity-Technologies/EntityComponentSystemSamples)
+
+**These assets are licensed under the Unity Companion License.**
+
 ## Scene Demo (Old)
 
 This demo introduces the basic setup of a Latios Framework project. It also

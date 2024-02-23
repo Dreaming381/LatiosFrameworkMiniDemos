@@ -23,9 +23,10 @@ Framework version used is 0.9.2.
 **Third-Party Notice:**
 
 **All Assets within a directory named Unity_Companion_License_Assets come from
-one of the following repositories:**
+one of the following locations:**
 
 -   [**https://github.com/Unity-Technologies/EntityComponentSystemSamples**](https://github.com/Unity-Technologies/EntityComponentSystemSamples)
+-   <https://assetstore.unity.com/packages/essentials/starter-assets-character-controllers-urp-267961>
 
 **These assets are licensed under the Unity Companion License.**
 

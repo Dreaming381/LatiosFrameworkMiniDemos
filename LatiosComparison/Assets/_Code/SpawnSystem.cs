@@ -1,3 +1,5 @@
+using Latios;
+using Latios.Kinemation;
 using Latios.Transforms;
 using Unity.Burst;
 using Unity.Collections;
@@ -30,6 +32,31 @@ public partial struct SpawnSystem : ISystem
         }
 
         state.EntityManager.DestroyEntity(QueryBuilder().WithAll<Spawner>().Build());
+    }
+}
+
+// Usually, optimized skeletons are spawned either in LatiosWorldSyncGroup or at the syncPoint via command buffer.
+// But for comparisons, we are spawning at the beginning of SimulationSystemGroup.
+[RequireMatchingQueriesForUpdate]
+[UpdateInGroup(typeof(SimulationSystemGroup), OrderFirst = true)]
+[UpdateAfter(typeof(SpawnSystem))]
+[BurstCompile]
+public partial struct FixOptimizedSkeletonSpawningSystem : ISystem
+{
+    [BurstCompile]
+    public void OnUpdate(ref SystemState state)
+    {
+        var ecb = state.GetLatiosWorldUnmanaged().syncPoint.CreateEnableCommandBuffer();
+        var dcb = new DisableCommandBuffer(Allocator.Temp);
+
+        // Using InternalSourceGen as a quick hack to detect that binding hasn't happened yet
+        foreach (var entity in QueryBuilder().WithAll<OptimizedBoneTransform>().WithNone<Latios.Kinemation.InternalSourceGen.DependentSkinnedMesh>().Build().ToEntityArray(Allocator
+                                                                                                                                                                           .Temp))
+        {
+            dcb.Add(entity);
+            ecb.Add(entity);
+        }
+        dcb.Playback(state.EntityManager, GetBufferLookup<LinkedEntityGroup>(true));
     }
 }
 

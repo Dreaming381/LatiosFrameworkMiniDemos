@@ -30,6 +30,26 @@ one of the following locations:**
 
 **These assets are licensed under the Unity Companion License.**
 
+## Blasting Blocks
+
+This was a 48-hour jam game with a team of myself and a single designer. The
+version here has since been ridded of bugs that existed in the original
+submission. Because this was a jam game, the code is not particularly clean and
+does not employ the best performance practices. However, it does show Psyshock’s
+UnitySim in action combined with Myri, plus a spring-hovering kinematic
+character controller.
+
+All assets are CC0:
+
+-   Environment Models – <kaylousberg.itch.io>
+-   Gun Model – <quaternius.com>
+-   Audio – <kenney.nl>
+
+The project uses Unity 6000.0.4f1 and Entities 1.2.1 and has been retrofitted to
+use the release version of Latios Framework 0.10.2.
+
+![](media/1c102428a304ea07b7c84b8c9e194abb.png)
+
 ## Scene Demo (Old)
 
 This demo introduces the basic setup of a Latios Framework project. It also

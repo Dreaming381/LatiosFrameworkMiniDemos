@@ -14,7 +14,9 @@ namespace Dragons.QvvsSamples.Tutorial.Systems
         protected override void CreateSystems()
         {
             GetOrCreateAndAddUnmanagedSystem<SpinnerSystem>();
+            GetOrCreateAndAddUnmanagedSystem<MovePlatformSystem>();
             GetOrCreateAndAddUnmanagedSystem<PlayerSystem>();
+            GetOrCreateAndAddUnmanagedSystem<ApplyTrackedPlatformToPositionSystem>();
         }
     }
 }

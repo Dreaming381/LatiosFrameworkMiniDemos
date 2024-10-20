@@ -43,7 +43,7 @@ namespace Dragons.PsyshockSamples.CollisionSimple
             }.ScheduleParallel();
 
             var query = QueryBuilder().WithAll<Spawner>().Build();
-            latiosWorld.syncPoint.CreateEntityCommandBuffer().DestroyEntity(query, EntityQueryCaptureMode.AtRecord);
+            latiosWorld.syncPoint.CreateEntityCommandBuffer().DestroyEntity(query.ToEntityArray(state.WorldUpdateAllocator));
         }
 
         [BurstCompile]

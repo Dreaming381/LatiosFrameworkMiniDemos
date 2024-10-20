@@ -41,7 +41,7 @@ using static Unity.Entities.SystemAPI;
 namespace Dragons.PsyshockSamples.CollisionSimple
 {
     [BurstCompile]
-    public partial struct FindPairsCollisionSystem : ISystem, ISystemShouldUpdate
+    public partial struct FindPairsCollisionSystem : ISystem, ISystemShouldUpdate, ISystemNewScene
     {
         LatiosWorldUnmanaged latiosWorld;
         EntityQuery          m_wallQuery;
@@ -55,6 +55,8 @@ namespace Dragons.PsyshockSamples.CollisionSimple
         // CollisionLayerSettings customize the how colliders are grouped spatially and can be optimized for a specific world.
         // It is optional, but when it is present, all CollisionLayers must be built with the same settings.
         CollisionLayerSettings m_settings;
+        // We keep track of when we need to rebuild the wall CollisionLayer, which is upon a new scene.
+        bool m_requiresWallLayerRebuild;
 
         // CollisionLayers are collection types, and so we store it in a collection component so that it is automatically disposed.
         partial struct WallCollisionLayer : ICollectionComponent
@@ -67,8 +69,8 @@ namespace Dragons.PsyshockSamples.CollisionSimple
         public void OnCreate(ref SystemState state)
         {
             latiosWorld       = state.GetLatiosWorldUnmanaged();
-            m_wallQuery       = state.Fluent().WithAll<WallTag>(true).PatchQueryForBuildingCollisionLayer().Build();
-            m_characterQuery  = state.Fluent().WithAll<CharacterPhysicsState>(false).WithAll<CharacterPhysicsStats>(true).PatchQueryForBuildingCollisionLayer().Build();
+            m_wallQuery       = state.Fluent().With<WallTag>(true).PatchQueryForBuildingCollisionLayer().Build();
+            m_characterQuery  = state.Fluent().With<CharacterPhysicsState>(false).With<CharacterPhysicsStats>(true).PatchQueryForBuildingCollisionLayer().Build();
             m_handles         = new BuildCollisionLayerTypeHandles(ref state);
             m_transformLookup = new PhysicsTransformAspectLookup(ref state);
 
@@ -91,11 +93,21 @@ namespace Dragons.PsyshockSamples.CollisionSimple
                 worldAabb                = new Aabb(-1f, 1f),
                 worldSubdivisionsPerAxis = new int3(1, 2, 1)
             };
+
+            m_requiresWallLayerRebuild = true;
         }
 
         public bool ShouldUpdateSystem(ref SystemState state)
         {
             return latiosWorld.sceneBlackboardEntity.GetComponentData<Settings>().useFindPairs;
+        }
+
+        public void OnNewScene(ref SystemState state)
+        {
+            // On a new scene, specify we need to rebuild the wall CollisionLayer.
+            // Also, we add an empty layer to the sceneBlackboardEntity to avoid a sync point later in OnUpdate().
+            m_requiresWallLayerRebuild = true;
+            latiosWorld.sceneBlackboardEntity.AddOrSetCollectionComponentAndDisposeOld<WallCollisionLayer>(default);
         }
 
         [BurstCompile]
@@ -104,16 +116,14 @@ namespace Dragons.PsyshockSamples.CollisionSimple
             var settings = latiosWorld.sceneBlackboardEntity.GetComponentData<Settings>();
 
             // The walls are static in the scene. If we haven't built a CollisionLayer for them yet, we do so here.
-            if (!latiosWorld.sceneBlackboardEntity.HasCollectionComponent<WallCollisionLayer>())
+            if (m_requiresWallLayerRebuild)
             {
-                // We sync here and build the CollisionLayer on the main thread so that we can add it to the sceneBlackboardEntity,
-                // which invokes a structural change. As we only do this once per scene, this sync point is fine.
-                state.CompleteDependency();
                 m_handles.Update(ref state);
                 // We can build a CollisionLayer using an EntityQuery. Normally, this is how most CollisionLayers are built, especially
                 // for colliders that have "trigger" behavior.
-                Physics.BuildCollisionLayer(m_wallQuery, in m_handles).WithSettings(m_settings).Run(out var newWallLayer, Allocator.Persistent);
-                latiosWorld.sceneBlackboardEntity.AddOrSetCollectionComponentAndDisposeOld(new WallCollisionLayer { layer = newWallLayer });
+                state.Dependency = Physics.BuildCollisionLayer(m_wallQuery, in m_handles).WithSettings(m_settings)
+                                   .ScheduleParallel(out var newWallLayer, Allocator.Persistent, state.Dependency);
+                latiosWorld.sceneBlackboardEntity.SetCollectionComponentAndDisposeOld(new WallCollisionLayer { layer = newWallLayer });
             }
 
             m_transformLookup.Update(ref state);

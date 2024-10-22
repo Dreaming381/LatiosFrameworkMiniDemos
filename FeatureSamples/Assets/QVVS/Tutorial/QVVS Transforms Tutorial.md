@@ -17,3 +17,15 @@ This scene shows a player character composed of a root entity, and two descendan
 ## Step 3: Motion History
 
 This scene shows the player on a moving platform with motion history. The motion of the moving platform is accounted for in the player’s movement, using the motion history of the moving platform. The `PreviousTransform` component stores the `WorldTransform` value at the start of simulation. Then the `WorldTransform` of the moving platform is updated, which makes it different from the `PreviousTransform` value. This difference is read by the player to offset it.
+
+## Step 4: Scale and Stretch
+
+This scene shows an animation that applies scale and stretch to different entities in the hierarchy. Scale is applied to the Root, and is inherited by all entities. However, Root’s child Stem has animated stretch. This scales Stem’s child Top’s local position offset relative to Stem’s local origin, but otherwise does not affect Top in any way. Top can then be stretched independently.
+
+## Step 5: Anchor Offsets
+
+When stretching a parent, it is important to remember that this moves the child object’s position, which is dependent on the child object’s origin point. However, often times, it is desired for the child to maintain visual contact with the parent. This scene shows a common configuration mistake, and how to rectify it using intermediate anchor offset entities. The anchor entity defines a point on the parent’s visual surface that should be tracked. The child is offset from this tracked point to maintain visual contact.
+
+## Step 6: Instantiating World Entities
+
+This scene shows how to instantiate entities in world-space. Because `TransformAspect` cannot be used in command buffers, `WorldTransform` is used here. It is safe to use `WorldTransform` directly for prefabs or root entities. This example also shows how to preserve the scale and stretch from the prefab, and how to use the static `qvvs` class to transform an offset used for the spawn location.

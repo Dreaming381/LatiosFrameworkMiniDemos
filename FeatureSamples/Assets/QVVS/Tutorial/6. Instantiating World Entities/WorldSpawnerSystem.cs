@@ -10,6 +10,7 @@ using static Unity.Entities.SystemAPI;
 
 namespace Dragons.QvvsSamples.Tutorial.Systems
 {
+    [RequireMatchingQueriesForUpdate]
     [BurstCompile]
     public partial struct WorldSpawnerSystem : ISystem
     {

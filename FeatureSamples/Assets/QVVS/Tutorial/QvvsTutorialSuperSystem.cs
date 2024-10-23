@@ -19,6 +19,7 @@ namespace Dragons.QvvsSamples.Tutorial.Systems
             GetOrCreateAndAddUnmanagedSystem<ApplyTrackedPlatformToPositionSystem>();
             GetOrCreateAndAddUnmanagedSystem<ScaleAndStretchAnimationSystem>();
             GetOrCreateAndAddUnmanagedSystem<WorldSpawnerSystem>();
+            GetOrCreateAndAddUnmanagedSystem<ChildSpawnerSystem>();
         }
     }
 }

@@ -28,4 +28,8 @@ When stretching a parent, it is important to remember that this moves the child 
 
 ## Step 6: Instantiating World Entities
 
-This scene shows how to instantiate entities in world-space. Because `TransformAspect` cannot be used in command buffers, `WorldTransform` is used here. It is safe to use `WorldTransform` directly for prefabs or root entities. This example also shows how to preserve the scale and stretch from the prefab, and how to use the static `qvvs` class to transform an offset used for the spawn location.
+This scene shows how to instantiate entities in world-space. Click to spawn small spheres behind the character. Because `TransformAspect` cannot be used in command buffers, `WorldTransform` is used here. It is safe to use `WorldTransform` directly for prefabs or root entities. This example also shows how to preserve the scale and stretch from the prefab, and how to use the static `qvvs` class to transform an offset used for the spawn location.
+
+## Step 7: Instantiating Child Entities
+
+This scene shows how to instantiate entities as children of other entities. Click to spawn a hat for the character. QVVS Transforms use the same `Parent` and `Child` concept as Unity Transforms. And you use them the same way. However, unlike Unity Transforms, QVVS Transforms will automatically add or remove `LocalTransform` based on the existence of the `Parent` component. This sample explicitly adds the `LocalTransform` to set the position and preserve scaling. But had it not, the entity would have been given an identity `LocalTransform`.

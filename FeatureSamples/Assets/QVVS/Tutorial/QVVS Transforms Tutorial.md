@@ -33,3 +33,9 @@ This scene shows how to instantiate entities in world-space. Click to spawn smal
 ## Step 7: Instantiating Child Entities
 
 This scene shows how to instantiate entities as children of other entities. Click to spawn a hat for the character. QVVS Transforms use the same `Parent` and `Child` concept as Unity Transforms. And you use them the same way. However, unlike Unity Transforms, QVVS Transforms will automatically add or remove `LocalTransform` based on the existence of the `Parent` component. This sample explicitly adds the `LocalTransform` to set the position and preserve scaling. But had it not, the entity would have been given an identity `LocalTransform`.
+
+## Step 8: Hierarchy Update Modes
+
+There are multiple scenes in this step. The first scene is named QVVS_Tutorial_Hierarchy_Update_Modes which shows how the influence a parent transform has on the child can be customized. `HierarchyUpdateMode` is an optional component that can be attached to a child entity and influences the mathematics used to update the child’s transform during the `TransformSuperSystem` update. Because this happens directly in the hierarchy update, it can eliminate awkward execution order issues or having to precompute parent world-space transforms prior to the `TransformSuperSystem` update. There is a special way to bake mode flags into entities, allowing for multiple bakers to specify flags (just like `TransformUsageFlags`). But you can also add, remove, and modify the flags at runtime.
+
+The scene QVVS_Tutorial_Hierachy_Mode_Example_A shows a common case where locking the world-space rotations on entities can be very useful.

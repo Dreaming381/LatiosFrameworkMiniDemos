@@ -5,7 +5,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Dragons.QvvsSamples
+namespace Dragons.QvvsSamples.Tutorial.Authoring
 {
     public class HierarchyUpdateModeAuthoring : MonoBehaviour
     {

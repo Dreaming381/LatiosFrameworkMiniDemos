@@ -16,7 +16,9 @@ This scene shows a player character composed of a root entity, and two descendan
 
 ## Step 3: Motion History
 
-This scene shows the player on a moving platform with motion history. The motion of the moving platform is accounted for in the player’s movement, using the motion history of the moving platform. The `PreviousTransform` component stores the `WorldTransform` value at the start of simulation. Then the `WorldTransform` of the moving platform is updated, which makes it different from the `PreviousTransform` value. This difference is read by the player to offset it.
+This scene shows the player on a moving platform with motion history. The motion of the moving platform is accounted for in the player’s movement, using the motion history of the moving platform. The `PreviousTransform` component stores the `WorldTransform` value at the start of simulation. Then the `WorldTransform` of the moving platform is updated, which makes it different from the `PreviousTransform` value. This difference is read by the player to offset it. There is also a `TwoAgoTransform` which contains the value of the `WorldTransform` at the start of the previous frame.
+
+In baking, you define a `[BakingType]` component that inherits the appropriate interface for the particular motion history component you desire. Then add that to your entity.
 
 ## Step 4: Scale and Stretch
 
@@ -39,3 +41,7 @@ This scene shows how to instantiate entities as children of other entities. Clic
 There are multiple scenes in this step. The first scene is named QVVS_Tutorial_Hierarchy_Update_Modes which shows how the influence a parent transform has on the child can be customized. `HierarchyUpdateMode` is an optional component that can be attached to a child entity and influences the mathematics used to update the child’s transform during the `TransformSuperSystem` update. Because this happens directly in the hierarchy update, it can eliminate awkward execution order issues or having to precompute parent world-space transforms prior to the `TransformSuperSystem` update. There is a special way to bake mode flags into entities, allowing for multiple bakers to specify flags (just like `TransformUsageFlags`). But you can also add, remove, and modify the flags at runtime.
 
 The scene QVVS_Tutorial_Hierachy_Mode_Example_A shows a common case where locking the world-space rotations on entities can be very useful.
+
+## Step 9: Copy Parent Transform
+
+This scene shows how the `CopyParentWorldTransformTag` can be used to pass the `WorldTransform` of the parent directly to the child. This is especially useful when you want to split a “world object” up into multiple entities that each perform different functions. The baking workflow is the same as motion history.

@@ -12,7 +12,7 @@ The Feature samples use Unity 6000.0.23f1 and Latios Framework 0.11.4.
 
 These pair of projects provide a comparison setup between vanilla Unity and the Latios Framework, demonstrating the Latios Framework’s superior performance of transforms and rendering.
 
-The projects use Unity 2022.3.20f1 and Entities 1.1.0-pre.3. The Latios Framework version used is 0.9.2.
+The projects use Unity 6000.0.23f1 and Entities 1.3.5. The Latios Framework version used is 0.11.4.
 
 **Third-Party Notice:**
 

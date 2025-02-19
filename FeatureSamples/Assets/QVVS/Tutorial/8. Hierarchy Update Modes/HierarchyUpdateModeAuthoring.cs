@@ -41,7 +41,7 @@ namespace Dragons.QvvsSamples.Tutorial.Authoring
                 flags |= HierarchyUpdateMode.Flags.StrictUp;
             if (authoring.keepWorldScale)
                 flags |= HierarchyUpdateMode.Flags.WorldScale;
-            this.AddHiearchyModeFlags(entity, flags);
+            this.AddHierarchyModeFlags(entity, flags);
         }
     }
 }

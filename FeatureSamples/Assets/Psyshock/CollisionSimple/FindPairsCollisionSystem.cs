@@ -40,7 +40,7 @@ using static Unity.Entities.SystemAPI;
 
 namespace Dragons.PsyshockSamples.CollisionSimple
 {
-    [BurstCompile]
+    //[BurstCompile]
     public partial struct FindPairsCollisionSystem : ISystem, ISystemShouldUpdate, ISystemNewScene
     {
         LatiosWorldUnmanaged latiosWorld;

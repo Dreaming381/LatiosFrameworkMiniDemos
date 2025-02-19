@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: d56cffc8c4aac67428e343152fa22558
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 143848
+  packageName: 'Unity Learn | 3D Beginner: Tutorial Resources | URP'
+  packageVersion: 3.1
+  assetPath: Assets/UnityTechnologies/Shaders/Toon/ToonShader.shadergraph
+  uploadId: 691540

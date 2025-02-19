@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: 475d389e70692ca4abb09caca1aef9ae
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: GargoyleMesh
+    100004: Head
+    100006: HeadEND
+    100008: Hips
+    100010: LeftArm
+    100012: LeftCalf
+    100014: LeftEar
+    100016: LeftEarEND
+    100018: LeftEye
+    100020: LeftEyebrow
+    100022: LeftEyelidDown
+    100024: LeftEyelidUp
+    100026: LeftFoot
+    100028: LeftFootEND
+    100030: LeftHand
+    100032: LeftHorn
+    100034: LeftHornEND
+    100036: LeftIndex
+    100038: LeftIndexEND
+    100040: LeftLeg
+    100042: LeftMiddle
+    100044: LeftMiddleEND
+    100046: LeftPinky
+    100048: LeftPinkyEND
+    100050: LeftShoulder
+    100052: LeftThumb
+    100054: LeftThumbEND
+    100056: LeftUpperArm
+    100058: LeftWing1
+    100060: LeftWing2
+    100062: LeftWingEND
+    100064: Mouth
+    100066: RightArm
+    100068: RightCalf
+    100070: RightEar
+    100072: RightEarEND
+    100074: RightEye
+    100076: RightEyebrow
+    100078: RightEyelidDown
+    100080: RightEyelidUp
+    100082: RightFoot
+    100084: RightFootEND
+    100086: RightHand
+    100088: RightHorn
+    100090: RightHornEND
+    100092: RightIndex
+    100094: RightIndexEND
+    100096: RightLeg
+    100098: RightMiddle
+    100100: RightMiddleEND
+    100102: RightPinky
+    100104: RightPinkyEND
+    100106: RightShoulder
+    100108: RightThumb
+    100110: RightThumbEND
+    100112: RightUpperArm
+    100114: RightWing1
+    100116: RightWing2
+    100118: RightWingEND
+    100120: Root
+    100122: Spine1
+    100124: Spine2
+    100126: GargoyleModel
+    100128: Pedestal
+    400000: //RootNode
+    400002: GargoyleMesh
+    400004: Head
+    400006: HeadEND
+    400008: Hips
+    400010: LeftArm
+    400012: LeftCalf
+    400014: LeftEar
+    400016: LeftEarEND
+    400018: LeftEye
+    400020: LeftEyebrow
+    400022: LeftEyelidDown
+    400024: LeftEyelidUp
+    400026: LeftFoot
+    400028: LeftFootEND
+    400030: LeftHand
+    400032: LeftHorn
+    400034: LeftHornEND
+    400036: LeftIndex
+    400038: LeftIndexEND
+    400040: LeftLeg
+    400042: LeftMiddle
+    400044: LeftMiddleEND
+    400046: LeftPinky
+    400048: LeftPinkyEND
+    400050: LeftShoulder
+    400052: LeftThumb
+    400054: LeftThumbEND
+    400056: LeftUpperArm
+    400058: LeftWing1
+    400060: LeftWing2
+    400062: LeftWingEND
+    400064: Mouth
+    400066: RightArm
+    400068: RightCalf
+    400070: RightEar
+    400072: RightEarEND
+    400074: RightEye
+    400076: RightEyebrow
+    400078: RightEyelidDown
+    400080: RightEyelidUp
+    400082: RightFoot
+    400084: RightFootEND
+    400086: RightHand
+    400088: RightHorn
+    400090: RightHornEND
+    400092: RightIndex
+    400094: RightIndexEND
+    400096: RightLeg
+    400098: RightMiddle
+    400100: RightMiddleEND
+    400102: RightPinky
+    400104: RightPinkyEND
+    400106: RightShoulder
+    400108: RightThumb
+    400110: RightThumbEND
+    400112: RightUpperArm
+    400114: RightWing1
+    400116: RightWing2
+    400118: RightWingEND
+    400120: Root
+    400122: Spine1
+    400124: Spine2
+    400126: GargoyleModel
+    400128: Pedestal
+    2100000: Gargoyle
+    4300000: GargoyleMesh
+    4300002: GargoyleModel
+    7400000: Idle
+    9500000: //RootNode
+    13700000: GargoyleMesh
+    13700002: GargoyleModel
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 239
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.8
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.008
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d3312d02a690eda48bd6807bf5c78084,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 143848
+  packageName: 'Unity Learn | 3D Beginner: Tutorial Resources | URP'
+  packageVersion: 3.1
+  assetPath: Assets/UnityTechnologies/Animation/Animation/Gargoyle@Idle.fbx
+  uploadId: 691540

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8b25e99361ac31d4e9ae83c46aee69ea
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267961
+  packageName: 'Starter Assets: Character Controllers | URP'
+  packageVersion: 1.1.0
+  assetPath: Assets/Starter Assets/Runtime/ThirdPersonController/Character/Materials/M_Armature_Legs.mat
+  uploadId: 697096

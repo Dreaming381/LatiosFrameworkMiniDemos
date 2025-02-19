@@ -1,0 +1,2 @@
+From the EntityComponentSystemSamples, in the animate GameObject demo.
+https://github.com/Unity-Technologies/EntityComponentSystemSamples/tree/master/EntitiesSamples/Assets/Graphical/_Common/Warrior

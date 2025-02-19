@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 933a4c278452da5439f18725676f1720
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 143848
+  packageName: 'Unity Learn | 3D Beginner: Tutorial Resources | URP'
+  packageVersion: 3.1
+  assetPath: Assets/UnityTechnologies/Shaders/Toon/CustomLighting.hlsl
+  uploadId: 691540

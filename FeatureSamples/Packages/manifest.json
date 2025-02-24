@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.latios.latiosframework": "https://github.com/Dreaming381/Latios-Framework.git#2644063d188501c1439599395ef9e3a86ff92cf6",
+    "com.latios.latiosframework": "https://github.com/Dreaming381/Latios-Framework.git",
     "com.unity.burst": "1.8.18",
     "com.unity.cinemachine": "2.10.1",
     "com.unity.collab-proxy": "2.5.2",

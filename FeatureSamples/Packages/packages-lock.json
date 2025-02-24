@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.latios.latiosframework": {
-      "version": "https://github.com/Dreaming381/Latios-Framework.git#2644063d188501c1439599395ef9e3a86ff92cf6",
+      "version": "https://github.com/Dreaming381/Latios-Framework.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
@@ -10,7 +10,7 @@
         "com.unity.entities.graphics": "1.4.6",
         "com.unity.burst": "1.8.19"
       },
-      "hash": "2644063d188501c1439599395ef9e3a86ff92cf6"
+      "hash": "a06fef92b3f6dc2b250b24ad2dacd5cdff69e63b"
     },
     "com.unity.audio.dspgraph": {
       "version": "0.1.0-preview.22",

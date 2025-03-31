@@ -10,7 +10,7 @@
         "com.unity.entities.graphics": "1.4.6",
         "com.unity.burst": "1.8.19"
       },
-      "hash": "a06fef92b3f6dc2b250b24ad2dacd5cdff69e63b"
+      "hash": "a2a6565ec1b74030ac7d63c668729ee0d714824a"
     },
     "com.unity.audio.dspgraph": {
       "version": "0.1.0-preview.22",

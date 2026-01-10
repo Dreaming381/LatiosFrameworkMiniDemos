@@ -8,6 +8,18 @@ This contains a collection of samples exploring specific features across the fra
 
 The Feature samples use Unity 6000.0.23f1 and Latios Framework 0.11.4.
 
+## Latios Calci Point Distribution Demos
+
+### Accretion Disk Demo
+
+This demo showcases the **Calci** module's accretion disk point distribution algorithm, featuring high-performance GPU particle simulation with 1 million+ particles rendering at 200-300 FPS.
+
+For full documentation, controls, and technical details, see the [Accretion Disk Demo README](LatiosCalciPointDistDemos/AccretionDiskDemo/README.md).
+
+The project uses Unity 6000.3.3f1 and Latios Framework 0.14.8.
+
+![](media/accretion-disk-demo.png)
+
 ## Latios/Unity Comparison
 
 These pair of projects provide a comparison setup between vanilla Unity and the Latios Framework, demonstrating the Latios Framework’s superior performance of transforms and rendering.

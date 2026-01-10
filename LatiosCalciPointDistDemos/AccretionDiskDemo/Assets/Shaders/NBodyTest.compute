@@ -1,0 +1,46 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSNBodyTest
+
+
+struct Body
+{
+    float3 pos;
+    float3 vel;
+    float3 acc;
+    float mass;
+};
+
+RWStructuredBuffer<Body> bodyBuffer;
+
+uint bodyCount;
+float deltaTime;
+
+float3 blackHolePos; // Add this
+float blackHoleMass; // Add this
+float softening;     // prevents singularities...allegedly
+
+[numthreads(256,1,1)]
+void CSNBodyTest(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= bodyCount)
+        return;
+    
+    Body body = bodyBuffer[id.x];
+    
+    // Calculate gravitational acceleration from black hole
+    float3 r = blackHolePos - body.pos;
+    float distSq = dot(r, r) + softening * softening; // Add softening to avoid singularity
+    float dist = sqrt(distSq);
+    float3 dir = r / dist;
+    
+    // F = GMm/r^2, a = F/m = GM/r^2
+    float G = 1.0f;
+    float accelMagnitude = G * blackHoleMass / distSq;
+    body.acc = dir * accelMagnitude;
+    
+    // Leapfrog integration (more stable for orbital mechanics)
+    body.vel += body.acc * deltaTime;
+    body.pos += body.vel * deltaTime;
+    
+    bodyBuffer[id.x] = body;
+}

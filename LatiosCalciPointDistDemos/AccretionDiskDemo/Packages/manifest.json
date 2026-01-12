@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.latios.latiosframework": "git@github.com:Dreaming381/Latios-Framework.git",
+    "com.latios.latiosframework": "https://github.com/Dreaming381/Latios-Framework.git",
     "com.unity.ai.navigation": "2.0.9",
     "com.unity.collab-proxy": "2.10.2",
     "com.unity.ide.visualstudio": "2.0.25",
